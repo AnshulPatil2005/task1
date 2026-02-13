@@ -88,9 +88,22 @@
         display: flex;
         font-size: 160px;
         font-weight: 300;
-        color: rgba(0, 0, 0, 0.2);
+        color: white;
         letter-spacing: -8px;
         font-style: italic;
+    }
+
+    /* D in top right */
+    .d-topright {
+        position: fixed;
+        top: 40px;
+        right: 80px;
+        z-index: 100;
+        font-size: 160px;
+        font-weight: 300;
+        color: white;
+        font-style: italic;
+        pointer-events: none;
     }
 
     .delve-container span {
@@ -138,6 +151,8 @@
     <div class="equals">=</div>
     <div class="projects-text">Projects</div>
 </div>
+
+<div class="d-topright">d</div>
 
 <div class="delve-container">
     <span>d</span>
