@@ -1,29 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects Delve</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Four Section Diagonal Layout</title>
+
+<style>
+    /* Remove default spacing */
+    body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    /* Base styling for all sections */
+    .section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: 0.4s ease;
+        cursor: pointer;
+    }
+
+    /* SECTION COLORS - Rotated 20° counter-clockwise */
+
+    /* Top Left */
+    .section1 {
+        background: #ffd6e7; /* Light pink */
+        clip-path: polygon(0 0, 68.2% 0, 50% 50%, 0 31.8%);
+    }
+
+    /* Top Right */
+    .section2 {
+        background: #c9f7d9; /* Light green */
+        clip-path: polygon(68.2% 0, 100% 0, 100% 68.2%, 50% 50%);
+    }
+
+    /* Bottom Left */
+    .section3 {
+        background: #e6e6e6; /* Light gray */
+        clip-path: polygon(0 31.8%, 50% 50%, 31.8% 100%, 0 100%);
+    }
+
+    /* Bottom Right */
+    .section4 {
+        background: #3f5f4f; /* Dark green-gray */
+        clip-path: polygon(50% 50%, 100% 68.2%, 100% 100%, 31.8% 100%);
+    }
+
+    /* Image overlay */
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: 0.4s ease;
+    }
+
+    /* Hover effect */
+    .section:hover .overlay {
+        opacity: 1;
+    }
+
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="section section-1" data-section="1">
-            <span class="label">projects</span>
-        </div>
-        <div class="section section-2" data-section="2"></div>
-        <div class="section section-3" data-section="3">
-            <span class="delve-text">delve</span>
-        </div>
-        <div class="section section-4" data-section="4"></div>
+
+<div class="container">
+
+    <div class="section section1">
+        <div class="overlay" style="background-image: url('https://picsum.photos/800/600?random=1');"></div>
     </div>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close">&times;</span>
-        <img id="modalImage" src="" alt="Section Photo">
+    <div class="section section2">
+        <div class="overlay" style="background-image: url('https://picsum.photos/800/600?random=2');"></div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="section section3">
+        <div class="overlay" style="background-image: url('https://picsum.photos/800/600?random=3');"></div>
+    </div>
+
+    <div class="section section4">
+        <div class="overlay" style="background-image: url('https://picsum.photos/800/600?random=4');"></div>
+    </div>
+
+</div>
+
 </body>
 </html>
